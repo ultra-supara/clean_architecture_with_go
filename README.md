@@ -1,4 +1,5 @@
 # clean_architecture_with_go
+🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶
 ## 🗄 About this repository
 * This is a sample API buil by Go(echo) and SQLBoiler according to Clean Architecture.
 
@@ -37,7 +38,7 @@ MYSQL_DATABASE=sample" > .env
 ### initialize local DB
 ```shell
 make run-db
-make migrate 
+make migrate
 make seed
 ```
 `make migrate` command may fail, but try some time.
@@ -58,4 +59,4 @@ Then, you have fully prepared for running API.
 ## 📄 API Document
 * Please copy and paste [this file](https://github.com/yagikota/clean_architecture_with_go/blob/main/api_doc.yml) on https://editor.swagger.io/ .
 
-🐶 I hope this repository helps you studying Clean Architecture with Go.
+🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶🐶
