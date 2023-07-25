@@ -31,7 +31,7 @@ func InitRouter() *echo.Echo {
 		healthCheckGroup.GET(relativePath, healthCheck)
 	}
 
-	// student
+	// student , DI ,各層の情報を集約してきてhandlingしやすくさせるための準備
 	mySQLConn := infra.NewMySQLConnector()
 	studentRepository := mysql.NewStudentRepository(mySQLConn.Conn)
 	studentService := service.NewStudentService(studentRepository)
@@ -43,6 +43,10 @@ func InitRouter() *echo.Echo {
 		// v1/students
 		relativePath := ""
 		studentGroup.GET(relativePath, handler.FindAllStudents())
+
+		// v1/students/:student_id
+		relativePath = "/:" + studentIDParam
+		studentGroup.GET(relativePath, handler.FindStudentByID())
 	}
 
 	return e
