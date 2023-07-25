@@ -9,6 +9,7 @@ import (
 
 type IStudentUsecase interface {
 	FindAllStudents(ctx context.Context) (model.StudentSlice, error)
+	FindStudentByID(ctx context.Context, id int) (*model.Student, error)
 }
 
 type studentUsecase struct {
@@ -26,11 +27,19 @@ func (su *studentUsecase) FindAllStudents(ctx context.Context) (model.StudentSli
 	if err != nil {
 		return nil, err
 	}
-
+	//todo: domain model -> 返却用のmodelに詰め替え
 	sSlice := make(model.StudentSlice, 0, len(msSlice))
 	for _, ms := range msSlice {
 		sSlice = append(sSlice, model.StudentFromDomainModel(ms))
 	}
 
 	return sSlice, nil
+}
+
+func (su *studentUsecase) FindStudentByID(ctx context.Context, id int) (*model.Student, error) {
+	ms, err := su.svc.FindStudentByID(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+	return model.StudentFromDomainModel(ms), nil
 }
